@@ -22,6 +22,12 @@ public class UserController {
         return userService.getUserById(id);
     }
 
+    @GetMapping()
+    @ResponseStatus(HttpStatus.OK)
+    public Iterable<User> getAllUsers() {
+        return userService.getAllUsers();
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public String createUser(@RequestBody UserDTO userDTO) {

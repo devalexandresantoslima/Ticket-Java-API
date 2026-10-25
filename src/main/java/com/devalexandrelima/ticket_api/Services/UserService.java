@@ -19,6 +19,10 @@ public class UserService {
                 .orElseThrow(() -> new RuntimeException("O usuario nao encontrado" + id));
     }
 
+    public Iterable<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+
     public String createUser(UserDTO userDTO){
         User user = new User();
 
